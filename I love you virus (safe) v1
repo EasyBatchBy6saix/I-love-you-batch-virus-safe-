@@ -1,0 +1,56 @@
+@echo off
+color 2
+title I love you virus - EasyBatchBy6saix
+echo.
+echo                                        I love you virus
+echo                                               Made by EasyBatchBy6saix
+echo                                              (click a key to start)
+pause >nul
+cls
+:50
+cls
+color a
+echo Do you love me? (answer only yes or no)
+set /p input=
+if /i %input%==yes goto love
+if /i %input%==no goto hate
+if /i not %input%==Yes,yes,No,no goto 1
+
+:1 
+cls
+echo it seems like you didn't type yes or no please type "Restart" to restart or "Leave" to exit the batch file.
+set /p input="Please type here:
+if /i %input%==restart goto Restart
+if /i %input%==Leave,leave goto Leave
+if /i not %input%==Leave,leave,Restart,restart goto Leave
+
+:Leave
+cls
+color 5
+echo press a key to leave.
+pause
+exit
+
+
+:love
+cls 
+echo I love you too!
+pause 
+exit 
+
+
+:hate
+cls
+echo But i love you...
+timeout 3
+echo fuck you
+pause 
+exit
+
+
+:Restart
+cls
+echo in 5 seconds you will be redirected to the start
+timeout 5
+goto 50
+
